@@ -41,13 +41,14 @@ myMyo.on('orientation', function(data){
 });
 
 myMyo.on('orientation', function(data){
-  if(data.x > .4){
-    alert('you just tilted your hand left')
+  if(data.x < -.4){
+    alert('left hand tilt detected')
+    client.front(.3)
   }
 });
 
 myMyo.on('orientation', function(data){
-  if(data.x < -.2){
-    alert('you just tilted your hand right')
+  if(data.x > .4){
+    client.back(.3)
   }
 });
