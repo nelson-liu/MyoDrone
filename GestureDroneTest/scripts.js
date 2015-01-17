@@ -48,16 +48,17 @@ myMyo.on('wave_out', function(edge){
     client.stop();
   })
 });
+//experimental features
 
-myMyo.on('orientation', function(data){
-  if(data.x < -.4){
-    alert('left hand tilt detected')
-    client.front(.3)
-  }
-});
-
-myMyo.on('orientation', function(data){
-  if(data.x > .4){
-    client.back(.3)
-  }
-});
+// myMyo.on('orientation', function(data){
+//   if(data.x < -.4){
+//     alert('left hand tilt detected')
+//     client.front(.3)
+//   }
+// });
+//
+// myMyo.on('orientation', function(data){
+//   if(data.x > .4){
+//     client.back(.3)
+//   }
+// });

@@ -39,15 +39,16 @@ myMyo.on('orientation', function(data){
     console.log('you just tilted your hand left')
   }
 });
-
-myMyo.on('orientation', function(data){
-  if(data.x < -.4){
-    console.log('left hand tilt detected')
-      }
-});
-
-myMyo.on('orientation', function(data){
-  if(data.x > .4){
-    console.log('right hand tilt detected')
-      }
-});
+// experimental features
+//
+// myMyo.on('orientation', function(data){
+//   if(data.x < -.4){
+//     console.log('left hand tilt detected')
+//       }
+// });
+//
+// myMyo.on('orientation', function(data){
+//   if(data.x > .4){
+//     console.log('right hand tilt detected')
+//       }
+// });
