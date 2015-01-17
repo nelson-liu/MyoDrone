@@ -33,3 +33,21 @@ myMyo.on('thumb_to_pinky', function(edge){
     alert('you just thumb to pinkied');
   })
 });
+
+myMyo.on('orientation', function(data){
+  if(data.x > .3){
+    alert('you just tilted your hand left')
+  }
+});
+
+myMyo.on('orientation', function(data){
+  if(data.x > .4){
+    alert('you just tilted your hand left')
+  }
+});
+
+myMyo.on('orientation', function(data){
+  if(data.x < -.2){
+    alert('you just tilted your hand right')
+  }
+});
