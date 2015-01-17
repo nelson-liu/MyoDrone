@@ -1,8 +1,9 @@
 var arDrone = require('ar-drone');
 var client = arDrone.createClient();
 client.config('general:navdata_demo', 'FALSE');
-var altitude = navdata.demo.altitudeMeters;
-var nextaltitude = altitude + 500; //add 500 mm, or .50 m to height
+client.on('navdata', function(data){
+  var altitude = navdata.demo.altitudeMeters;
+});
 
 //drone takeoff
 client.takeoff();
@@ -16,7 +17,7 @@ client.stop();
 
 //move up 500 mm
 altitude = navdata.demo.altitudeMeters;
-nextaltitude = altitude + 500; //add 500 mm, or .50 m to height
+var nextaltitude = altitude + 500; //add 500 mm, or .50 m to height
 while (altitude !== nextaltitude) {
   client.up(0.3);
   altitude = navdata.demo.altitudeMeters;
@@ -26,7 +27,7 @@ client.stop();
 
 //move down 500 mm
 altitude = navdata.demo.altitudeMeters;
-nextaltitude = altitude - 500; //subtract 500 mm, or .50 m to height
+var nextaltitude = altitude - 500; //subtract 500 mm, or .50 m to height
 while (altitude !== nextaltitude) {
   client.down(0.3);
   altitude = navdata.demo.altitudeMeters;

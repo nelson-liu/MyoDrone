@@ -3,8 +3,6 @@ var client = arDrone.createClient();
 client.config('general:navdata_demo', 'FALSE');
 var Myo = require('myo');
 var myMyo = Myo.create();
-//var altitude = navdata.demo.altitudeMeters;
-//var nextaltitude = altitude + 500; //add 500 mm, or .50 m to height
 
 client.on('navdata', function(data){
     var altitude = navdata.demo.altitudeMeters;
