@@ -8,7 +8,6 @@ var myMyo = Myo.create();
 
 client.on('navdata', function(data){
     var altitude = navdata.demo.altitudeMeters;
-
 });
 //Edge is true if it's the start of the pose, false if it's the end of the pose
 
@@ -26,7 +25,7 @@ myMyo.on('fist', function(edge){
   })
 });
 
-myMyo.on('wave_in', function(edge){
+myMyo.on('wave_out', function(edge){
   myMyo.timer(edge, 500, function(){
     console.log('wave in detected');
     altitude = navdata.demo.altitudeMeters;
@@ -39,7 +38,7 @@ myMyo.on('wave_in', function(edge){
   })
 });
 
-myMyo.on('wave_out', function(edge){
+myMyo.on('wave_in', function(edge){
   myMyo.timer(edge, 500, function(){
     console.log('wave in detected');
     altitude = navdata.demo.altitudeMeters;
@@ -51,6 +50,23 @@ myMyo.on('wave_out', function(edge){
     client.stop();
   })
 });
+
+
+myMyo.on('wave_in', function(edge){
+  client.after(500, function() {
+    client.down(0.5);
+  })
+  client.stop();
+});
+
+
+myMyo.on('wave_out', function(edge){
+  client.after(500, function() {
+    client.up(0.5);
+  })
+  client.stop();
+});
+
 //experimental features
 
 // myMyo.on('orientation', function(data){
