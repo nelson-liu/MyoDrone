@@ -40,7 +40,7 @@ myMyo.on('wave_out', function(edge){
   myMyo.timer(edge, 500, function(){
     console.log('wave in detected');
     altitude = navdata.demo.altitudeMeters;
-    nextaltitude = altitude +- 500; //subtract 500 mm, or .50 m to height
+    nextaltitude = altitude - 500; //subtract 500 mm, or .50 m to height
     while (altitude !== nextaltitude) {
       client.down(0.3);
       altitude = navdata.demo.altitudeMeters;
