@@ -34,12 +34,13 @@ myMyo.on('thumb_to_pinky', function(edge){
   })
 });
 
-myMyo.on('orientation', function(data){
-  if(data.x > .3){
-    console.log('you just tilted your hand left')
-  }
-});
 // experimental features
+
+// myMyo.on('orientation', function(data){
+//   if(data.x > .3){
+//     console.log('you just tilted your hand left')
+//   }
+// });
 //
 // myMyo.on('orientation', function(data){
 //   if(data.x < -.4){
