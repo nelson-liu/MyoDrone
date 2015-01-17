@@ -52,20 +52,20 @@ myMyo.on('wave_in', function(edge){
 });
 
 
-myMyo.on('wave_in', function(edge){
-  client.after(500, function() {
-    client.down(0.5);
-  })
-  client.stop();
-});
+// myMyo.on('wave_in', function(edge){
+//   client.after(500, function() {
+//     client.down(0.5);
+//   })
+//   client.stop();
+// });
 
 
-myMyo.on('wave_out', function(edge){
-  client.after(500, function() {
-    client.up(0.5);
-  })
-  client.stop();
-});
+// myMyo.on('wave_out', function(edge){
+//   client.after(500, function() {
+//     client.up(0.5);
+//   })
+//   client.stop();
+// });
 
 //experimental features
 
