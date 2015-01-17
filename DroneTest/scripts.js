@@ -1,15 +1,18 @@
 var arDrone = require('ar-drone');
 var client = arDrone.createClient();
+client.config('general:navdata_demo', 'FALSE');
 var altitude = navdata.demo.altitudeMeters;
 var nextaltitude = altitude + 500; //add 500 mm, or .50 m to height
 
 //drone takeoff
 client.takeoff();
 
-//after 5 seconds, turn clockwise at .5 speed
-client.after(5000, function() {
+//after 2 seconds, turn clockwise at .5 speed
+client.after(2000, function() {
   this.clockwise(0.5);
 })
+
+client.stop();
 
 //move up 500 mm
 altitude = navdata.demo.altitudeMeters;
