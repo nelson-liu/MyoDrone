@@ -2,11 +2,18 @@ var arDrone = require('ar-drone');
 var client = arDrone.createClient();
 var Myo = require('myo');
 var myMyo = Myo.create();
+var isFlying = false;
 
 myMyo.on('fingers_spread', function(edge){
   myMyo.timer(edge, 500, function(){
-    console.log('spreading fingers detected');
-    client.takeoff();
+    if(isFlying == false){
+      console.log('spreading fingers detected');
+      client.takeoff();
+      isFlying = true;
+    }
+    else{
+      //take a photo
+    }
   })
 });
 
@@ -14,6 +21,7 @@ myMyo.on('fist', function(edge){
   myMyo.timer(edge, 500, function(){
     console.log('fist detected');
     client.land();
+    isFlying = false;
   })
 });
 
