@@ -2,54 +2,34 @@ var Myo = require('myo');
 var myMyo = Myo.create();
 myMyo.on('fist', function(edge){
   myMyo.timer(edge, 500, function(){
-    console.log('you just made a fist');
+    console.log('Gesture: Fist');
   })
 });
 
 myMyo.on('fingers_spread', function(edge){
   //Edge is true if it's the start of the pose, false if it's the end of the pose
   myMyo.timer(edge, 500, function(){
-    console.log('you just spread your fingers');
+    console.log('Gesture: Fingers Spread');
   })
 });
 
 myMyo.on('wave_in', function(edge){
   //Edge is true if it's the start of the pose, false if it's the end of the pose
   myMyo.timer(edge, 500, function(){
-    console.log('you just waved in');
+    console.log('Gesture: Wave In');
   })
 });
 
 myMyo.on('wave_out', function(edge){
   //Edge is true if it's the start of the pose, false if it's the end of the pose
   myMyo.timer(edge, 500, function(){
-    console.log('you just waved out');
+    console.log('Gesture: Wave Out');
   })
 });
 
 myMyo.on('thumb_to_pinky', function(edge){
   //Edge is true if it's the start of the pose, false if it's the end of the pose
   myMyo.timer(edge, 500, function(){
-    console.log('you just thumb to pinkied');
+    console.log('Gesture: Thumb to Pinky');
   })
 });
-
-// experimental features
-
-// myMyo.on('orientation', function(data){
-//   if(data.x > .3){
-//     console.log('you just tilted your hand left')
-//   }
-// });
-//
-// myMyo.on('orientation', function(data){
-//   if(data.x < -.4){
-//     console.log('left hand tilt detected')
-//       }
-// });
-//
-// myMyo.on('orientation', function(data){
-//   if(data.x > .4){
-//     console.log('right hand tilt detected')
-//       }
-// });
