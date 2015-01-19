@@ -11,9 +11,6 @@ myMyo.on('fingers_spread', function(edge){
       client.takeoff();
       isFlying = true;
     }
-    else{
-      //take a photo
-    }
   })
 });
 
