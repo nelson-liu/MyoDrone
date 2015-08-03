@@ -4,6 +4,8 @@ var Myo = require('myo');
 var myMyo = Myo.create();
 var isFlying = false;
 
+//When the myo fingers_spread action is detected,
+//make the drone takeoff.
 myMyo.on('fingers_spread', function(edge){
   myMyo.timer(edge, 500, function(){
     if(isFlying == false){
@@ -14,6 +16,8 @@ myMyo.on('fingers_spread', function(edge){
   })
 });
 
+//When the myo fist action is detected,
+//make the drone land.
 myMyo.on('fist', function(edge){
   myMyo.timer(edge, 500, function(){
     console.log('fist detected');
@@ -22,6 +26,8 @@ myMyo.on('fist', function(edge){
   })
 });
 
+//When the myo wave_out action is detected,
+//make the drone slowly move upwards for 4 seconds.
 myMyo.on('wave_out', function(edge){
   myMyo.timer(edge, 500, function(){
     console.log('wave out detected');
@@ -32,6 +38,8 @@ myMyo.on('wave_out', function(edge){
   })
 });
 
+//When the myo wave_in action is detected,
+//make the drone slowly move downwards for 4 seconds.
 myMyo.on('wave_in', function(edge){
   myMyo.timer(edge, 500, function(){
     console.log('wave in detected');
