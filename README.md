@@ -1,8 +1,11 @@
 # MyoDrone
 Utilizing node.js, the [Thalmic Labs Myo](https://www.thalmic.com/en/myo/) to control a [Parrot AR Drone 2.0](http://ardrone2.parrot.com/) and take a wide-angle, aerial selfie -- all with gestures!
 
+# Awards
 Top 30 at PennApps 2015 Winter
 [Demo Video](http://vimeo.com/117117898)
+
+https://devpost.com/software/edison-s-myodrone
 
 ## 3rd Party Libraries Used
 Huge thanks to the developers of these great libraries for interfacing with the Myo and the Parrot AR Drone 2.0.
